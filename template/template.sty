@@ -1,0 +1,80 @@
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage[right=1.3cm, top=1.2cm, left=1.3cm, bottom=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{xepersian}
+
+\graphicspath{ {images/} }
+
+\settextfont[ExternalLocation=fonts/, BoldFont=XBNiloofarBd.ttf, ItalicFont=XBNiloofarIt.ttf, BoldItalicFont=XBNiloofarBdIt.ttf]{XBNiloofar.ttf}
+\setdigitfont[ExternalLocation=fonts/, BoldFont=XBNiloofarBd.ttf, ItalicFont=XBNiloofarIt.ttf, BoldItalicFont=XBNiloofarBdIt.ttf]{XBNiloofar.ttf}
+
+\setlength{\footskip}{25pt}
+
+\newcommand{\header}[1]{
+	{\setlength\tabcolsep{0pt}
+		\begin{tabularx}{\textwidth} { >{\raggedleft\arraybackslash}X >{\raggedright\arraybackslash}X }
+			\makecell[Xr]{
+				\includegraphics[width=2.7cm]{sharif} \\
+			} &
+			\makecell[Xl]{
+				#1
+			}
+	\end{tabularx}}
+}
+
+\newcommand{\bipartsubheader}[3]{
+	{\setlength\tabcolsep{0pt}
+		\renewcommand{\arraystretch}{2}
+		\begin{tabularx}{\textwidth} { >{\raggedleft\arraybackslash}X >{\raggedright\arraybackslash}X }
+			\hline
+			\makecell[Xr]{#1} &
+			\makecell[Xl]{#2}
+			\vspace{#3} \\
+			\hline
+	\end{tabularx}}
+}
+
+\newcommand{\tripartsubheader}[4]{
+	{\setlength\tabcolsep{0pt}
+		\renewcommand{\arraystretch}{2}
+		\begin{tabularx}{\textwidth} { >{\raggedleft\arraybackslash}X >{\centering\arraybackslash}X >{\raggedright\arraybackslash}X }
+			\hline
+			\makecell[Xr]{#1} &
+			\makecell[Xr]{#2} &
+			\makecell[Xl]{#3}
+			\vspace{#4} \\
+			\hline
+	\end{tabularx}}
+}
+
+\newenvironment{questionset}{
+	\begin{enumerate}[label={\bfseries پرسش \arabic*}, wide, labelindent=0pt]
+	}
+	{
+	\end{enumerate}
+}
+
+\lstdefinestyle{codestyle}{
+	frame=single,
+	aboveskip=3mm,
+	belowskip=1mm,
+	showstringspaces=false,
+	columns=flexible,
+	numbers=left,
+	numbersep=5pt, 
+	numberstyle=\tiny\color{blue},
+	keywordstyle=\color{red},
+	commentstyle=\color{pink},
+	stringstyle=\color{olive},
+	basicstyle={\small\ttfamily},
+	breaklines=false,
+	breakatwhitespace=false,
+	tabsize=4
+}
