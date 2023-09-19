@@ -1,4 +1,4 @@
-name: Build Questions Document
+name: Build Document
 on: [push]
 jobs:
   build_latex:
@@ -11,8 +11,15 @@ jobs:
         with:
           root_file: main.questions.tex
           latexmk_use_xelatex: true
+      - name: Compile LaTeX Document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.solution.tex
+          latexmk_use_xelatex: true
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Questions
-          path: main.questions.pdf
+          name: pdf
+          path: |
+            main.questions.pdf
+            main.solution.pdf
